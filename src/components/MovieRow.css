@@ -1,0 +1,49 @@
+.movieRow {
+    margin-bottom: 30px;
+}
+.movieRow h2 {
+    margin: 0px 0px 0px 30px;
+}
+.movieRow--listarea {
+    overflow-x: hidden;   /* Tudo o que passar da tela na horizontal vai ser cortado */
+    padding-left: 30px;
+}
+.movieRow--item {
+    display: inline-block;  /* Para fazer com que um item fique ao lado do outro */
+    width: 150px;
+    cursor: pointer;    /* Para fazer com que o cursor do mouse fique ponterado quando passar sobre os itens */
+}
+.movieRow--item img {
+    width: 100%;    /* A imagem vai ter 100% da área disponível */
+    transform: scale(0.9);  /* Para separar as imagens um do outro. Não foi feito através de um margin ou um padding porque desta forma permite fazer uma animação quando for passado o mouse nas imagens e estas separam-se automaticamente após isso (scale(0.9) = escala de 90% */
+    transition: all ease 0.2s;  /* Qualquer transição que for feita nas imagens vai ser do tipo ease e vai demorar 0.2 segundos */
+}
+.movieRow--item img:hover { /* O que acontece quando for passado o mouse na imagem */
+    transform: scale(1);
+}
+
+.movieRow--left,
+.movieRow--right {  /* Posicionando as setas de rolagemdireita e esquerda */
+    position: absolute;
+    width: 40px;
+    height: 225px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden ;
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+.movieRow--left {
+    left: 0;
+}
+.movieRow--right {
+    right: 0;
+}
+.movieRow:hover .movieRow--left,
+.movieRow:hover .movieRow--right {
+    opacity: 1;
+}
