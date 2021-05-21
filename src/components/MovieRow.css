@@ -8,6 +8,10 @@
     overflow-x: hidden;   /* Tudo o que passar da tela na horizontal vai ser cortado */
     padding-left: 30px;
 }
+
+.movieRow--list {
+    transition: all ease 0.5s; /* Para quando mudar a margem esquerda, ele muda através de transições */
+}
 .movieRow--item {
     display: inline-block;  /* Para fazer com que um item fique ao lado do outro */
     width: 150px;
@@ -46,4 +50,11 @@
 .movieRow:hover .movieRow--left,
 .movieRow:hover .movieRow--right {
     opacity: 1;
+}
+
+@media (max-width:760px) {   /* Dando uma condição especial para responsividade no telemóvel */
+    .movieRow--left,
+    .movieRow--right {
+        opacity: 1;
+    }
 }

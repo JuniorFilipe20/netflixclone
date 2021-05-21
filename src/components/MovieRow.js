@@ -4,14 +4,23 @@ import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 export default ({title, items}) => {
-    const [scrollX, setScrollX] = useState(0)   // Variável do estado da rolagem na horizontal
+    const [scrollX, setScrollX] = useState(-400)   // Variável do estado da rolagem na horizontal
 
     const handleLeftArrow = () => { // Função que vai lidar com a seta da esquerda
-
+        let x = scrollX + Math.round(window.innerWidth / 2);  // Fazendo com que cada clique na seta faça rodar o número de pixels correspondente à metade do tamanho da tela
+        if(x > 0){  // Fazendo um limite no 0 para que quando chegar em 0px não rode mais
+            x = 0;
+        }
+        setScrollX(x)
     }
 
     const handleRightArrow = () => { // Função que vai lidar com a seta da direita
-
+        let x = scrollX - Math.round(window.innerWidth / 2);  // Fazendo com que cada clique na seta faça rodar o número de pixels correspondente à metade do tamanho da tela
+        let listW = items.results.length * 150;    // Para pegar a largura total da lista
+        if((window.innerWidth - listW) > x){  // Se a diferença entre o tamanho da tela e o tamanho da lista for maior do que o total de espaço que se quer ir à margem direita
+            x = (window.innerWidth - listW) - 60;  // Então volta-se para o limite à direita, diminuíndo os 30px do padding da seta à direita e 30px do padding da seta à esquerda (30+30=60)
+        }
+        setScrollX(x)
     }
 
     return (

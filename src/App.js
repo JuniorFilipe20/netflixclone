@@ -65,6 +65,12 @@ export default () => {
         Dados pegos do site <a href="https://www.themoviedb.org/">themoviedb.org</a>
         
       </footer>
+
+      {movieList.length <= 0 &&   // O loading aparece só quando a Lista de filmes não estiver carregada ainda
+        <div className="loading">   {/* Correspondente a quando a página se encontre a carregar */}
+          <img src="https://cdn.statically.io/img/techverge.io/wp-content/uploads/2018/01/Netflix_LoadTime.gif?quality=100&f=auto" alt="Carregando" />
+        </div>
+      }
     </div>
   );
 }
