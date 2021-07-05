@@ -1,10 +1,11 @@
+/* eslint-disable import/no-anonymous-default-export */
 import React, { useState } from 'react';
 import './MovieRow.css';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 export default ({title, items}) => {
-    const [scrollX, setScrollX] = useState(-400)   // Variável do estado da rolagem na horizontal
+    const [scrollX, setScrollX] = useState(-400)   // Variável do estado da rolagem na horizontal, em que o valor atribuído (-400), corresponde à posição na tela em número de pixels que inicialmente os itens se encontram
 
     const handleLeftArrow = () => { // Função que vai lidar com a seta da esquerda
         let x = scrollX + Math.round(window.innerWidth / 2);  // Fazendo com que cada clique na seta faça rodar o número de pixels correspondente à metade do tamanho da tela

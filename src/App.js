@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Tmdb from './Tmdb';
@@ -18,7 +19,7 @@ export default () => {
       setMovieList(list);
 
       // Pagando o filme em destaque
-      let originals = list.filter(i =>i.slug === 'originals'); // Para pegar um filme nos Originais do Netflix, ou seja, em que no Tmdb.js tem o slug "originals"
+      let originals = list.filter(i => i.slug === 'originals'); // Para pegar um filme nos Originais do Netflix, ou seja, em que no Tmdb.js tem o slug "originals"
       let randomChosen = Math.floor(Math.random() * (originals[0].items.results.length -1));  // Para fazer com que o item que foi pegado na linha anterior seja aleatório, em que vai gerar um número aleatório e este número é multiplicado pela quantidade de itens existente na lista, sendo que o "-1" é devido ao array que começa em 0 e a quantidade de itens começa em 1, então a sua quantidade é subtraída por 1
       let chosen = originals[0].items.results[randomChosen]  // Para pegar o filme específico na lista
       let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');  // Para pegar as informações adicionais do filme escolhido
