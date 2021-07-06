@@ -77,7 +77,7 @@
     color: #999;
 }
 
-@media (max-width:760px) {   /* Dando uma condição especial para responsividade no telemóvel */
+@media screen and (max-width:768px) {   /* Dando uma condição especial para responsividade para tablets */
     .featured {
         height: 90vh;
     }
@@ -90,7 +90,7 @@
     .featured--description {
         font-size: 14px;
         max-width: 50%;
-        margin-right: 30px;
+        margin-right: 60px;
     }
     .featured--watchbutton,
     .featured--mylistbutton {
@@ -98,5 +98,31 @@
     }
     .featured--genres {
         font-size: 14px;
+        padding-top: -5px;
+    }
+}
+
+@media screen and (max-width:480px) {   /* Dando uma condição especial para responsividade para telemóveis */
+    .featured {
+        height: 90vh;
+    }
+    .featured--name {
+        font-size: 40px;
+    }
+    .featured--info {
+        font-size: 17px;
+    }
+    .featured--description {
+        font-size: 16px;
+        max-width: 50%;
+        margin-right: 30px;
+    }
+    .featured--watchbutton,
+    .featured--mylistbutton {
+        font-size: 17px;
+    }
+    .featured--genres {
+        font-size: 18px;
+        margin-right: 30px;
     }
 }

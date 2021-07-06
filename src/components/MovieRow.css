@@ -52,7 +52,7 @@
     opacity: 1;
 }
 
-@media (max-width:760px) {   /* Dando uma condição especial para responsividade no telemóvel */
+@media screen and (max-width:768px) {   /* Dando uma condição especial para responsividade para tablets */
     .movieRow--left,
     .movieRow--right {
         opacity: 1;
